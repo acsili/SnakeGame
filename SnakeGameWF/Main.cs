@@ -18,7 +18,7 @@ namespace SnakeGameWF
         private int score = 0;
         private int record = 0;
 
-        private int XStart = 1;
+        private int XStart = 1; 
         private int YStart = 1;
 
         public Main()
@@ -176,19 +176,6 @@ namespace SnakeGameWF
             eatTail();
         }
 
-       
-        private void OnPaint(object sender, PaintEventArgs e)
-        {
-            e.Graphics.DrawRectangle(new Pen(Color.Black), 0, 0, widthWindow - 100, heightWindow);
-        }
-
-        private void picUpdate(Object myObject, EventArgs eventsArgs)
-        {
-            touchBoard();
-            eatFood();
-            moveSnake();
-        }
-
         private void keyDown(object sender, KeyEventArgs e)
         {
 
@@ -213,6 +200,19 @@ namespace SnakeGameWF
                 directionSnakeX = 0;
             }
         }
+
+        private void OnPaint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawRectangle(new Pen(Color.Black), 0, 0, widthWindow - 100, heightWindow);
+        }
+
+        private void picUpdate(Object myObject, EventArgs eventsArgs)
+        {
+            touchBoard();
+            eatFood();
+            moveSnake();
+        }
+
 
     }
 }
